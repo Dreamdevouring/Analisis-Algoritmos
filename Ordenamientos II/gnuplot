@@ -1,0 +1,32 @@
+Guarda tus datos por columnas con el siguiente formato:
+
+TamañoEjemplar	TiempoAlgoritmo1	TiempoAlgoritmo2	...	TiempoAlgoritmoN
+
+Entre cada columna hay espacio de un tab "\t". Guárdalo en un archivo, por ejemplo "tiempos.dat".
+Inicia gnuplot:
+
+$ gnuplot
+
+Crea las gráficas con plot:
+
+> plot 'tiempos.dat' using 1:2 with lines title 'TiempoAlgoritmo1', using 1:3 with lines title 'TiempoAlgoritmo2', ..., using 1:(N+1) with lines title 'TiempoAlgoritmoN'
+
+Para crear una imagen png:
+
+> set term png size <ancho>,<alto>
+
+Donde ancho y alto son las dimensiones en pixeles de la imagen. Especifica el nombre de la imagen:
+
+> set output 'tiempos.png'
+
+Vuelve a graficar para crear la imagen:
+
+> replot
+
+Regresa al graficador de gnuplot:
+
+> set term x11
+
+Sal de gnuplot:
+
+> exit

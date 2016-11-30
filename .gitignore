@@ -3,3 +3,6 @@
 
 # Archivos Java compilados
 **/*.class
+
+# Archvios temporales de Emacs
+**/*~
